@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+faiss-cpu
+transformers
+Pillow
+pandas
+scikit-learn
+numpy
+pinecone
+langchain
+huggingface_hub
+joblib
+requests
