@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './ChatPage.css';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://ai-ml-product-reco-app.onrender.com/api';
 
 function ChatPage() {
   const [message, setMessage] = useState('');
