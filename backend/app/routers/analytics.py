@@ -65,9 +65,12 @@ def get_price_distribution(bins: int = 20) -> Dict[str, Any]:
     if df is None:
         raise HTTPException(status_code=500, detail="Dataset not loaded")
 
-    # Clean price column
+    # Use cleaned_price column if available, otherwise clean price column
     df_clean = df.copy()
-    df_clean['price'] = pd.to_numeric(df_clean['price'], errors='coerce')
+    if 'cleaned_price' in df_clean.columns:
+        df_clean['price'] = df_clean['cleaned_price']
+    else:
+        df_clean['price'] = pd.to_numeric(df_clean['price'].astype(str).str.replace('$', '').str.replace(',', ''), errors='coerce')
     df_clean = df_clean.dropna(subset=['price'])
 
     if df_clean.empty:
