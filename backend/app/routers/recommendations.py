@@ -159,7 +159,10 @@ def search_similar_products(query, top_k=5):
 
     # Sort by score and take top_k
     matches.sort(key=lambda x: x['score'], reverse=True)
-    top_matches = matches[:top_k]
+    if top_k <= 0:
+        top_matches = matches  # Return all matches if top_k <= 0
+    else:
+        top_matches = matches[:top_k]
 
     recommendations = []
     for match in top_matches:

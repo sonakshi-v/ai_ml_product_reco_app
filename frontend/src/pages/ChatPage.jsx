@@ -36,8 +36,25 @@ function ChatPage() {
     <div className="chat-page">
       <div className="chat-container">
         <div className="chat-header">
-          <h2>Find Your Perfect Furniture</h2>
-          <p>Describe what you're looking for and get personalized recommendations!</p>
+          <div className="hero-section">
+            <div className="hero-icon">🪑</div>
+            <h2>Find Your Perfect Furniture</h2>
+            <p>Describe your dream furniture piece and let AI find the perfect match for you!</p>
+            <div className="hero-features">
+              <div className="feature">
+                <span className="feature-icon">🎯</span>
+                <span>AI-Powered Matching</span>
+              </div>
+              <div className="feature">
+                <span className="feature-icon">💰</span>
+                <span>Price Comparison</span>
+              </div>
+              <div className="feature">
+                <span className="feature-icon">📸</span>
+                <span>Visual Preview</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="chat-form">
